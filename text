@@ -1,0 +1,150 @@
+/// GRID WEBSITE NEXTER PROJECT
+
+Site about selling homes, project main goal is to use grid as much as possible. In sass files we got base, features,
+footer, gallery, header, homes realtors, sidebar, story, typography, and main.scss files.
+
+CSS GRID - is a brand new module that brings a two-dimensional grid system to CSS for the first time, 
+grid replaces float layouts, usig less, and more readable and logical css and html, grid works 
+perfectly together with flexbox, css grid changes the way that we see and build two dimensional layouts.
+
+Similar to flexbox it has columns axis and row axis, and it has grid container, but its more complex, 
+grid lines - are columns, grid track - is grid row it is horizontal, are between is called grid area, 
+and space inside is grid cell. 
+
+GRID CONTAINER 
+
+grid-template-rows:
+grid-template-columns:
+grid-template-areas
+
+
+grid-row-gap 
+grid-column-gap
+
+justify-items
+alignt-items
+justify-content
+align-content
+
+grid-auto-rows
+grid-auto-columns
+grid-auto-flow
+
+GRID ITEM
+
+grid-row-start
+grid-row-end
+grid-column-start
+grid-column-end
+
+justify-self
+align-self
+
+order
+
+for short emmet creating items there is short way example: .container>item.item--$*6 
+
+with grid-template-rows: we define heights of our rows example: 150px
+with grid-template-columns: we define width of our columns example: 150px;
+with grid-row-gap: we define space between example: 30px;
+with grid-column-gap is same
+repeat(2, 150px);  is completly same as writing grid-template-rows: 150px 150px;
+if we want 2 same but 1 different we can type: grid-template-rows: repeat(2,150px) 300px;
+
+fractional unit 1fr it expands to all the space that it can occupy
+example: repeat(2,150px) 1fr;
+
+positioning items ///
+grid-row-start: 2; // to place in column number 2
+grid-row-end: 3; // place it in second column 
+grid-column-start: 2 // it is in second column
+grid-column-end: 3 // place it in second column
+
+easier way to do it:
+grid-row: 2 / 3;
+grid-column: 2 / 3;
+
+more short way for same thing: 
+
+grid-area: 1/ 3 / 2/ 4; //confusing method
+
+
+spanning grid items//
+if we set more items then we have then we will simply create a new line
+
+grid-column: 1 / 3;
+
+we can have multiple grid items in one cell 
+
+we can simply say :
+
+grid-column: 1 / span 3;
+so this will span 3 columns
+
+grid-column: 2 / -1; / this simply spans from to all to the end
+
+
+naming grid lines ////
+all we have to do is use squared brackets and put the name inside
+
+grid-template-row: [header-start] 100px [header-end] 200px and best practice is to basically describe the content, we can also 
+add multiple names inside brackets example [header-end box-small] 200px, and this is good practice.
+we use it by name example grid-row: box-start / main-end;
+
+explicit grid is main grid, and what is left is implicit grid
+
+grid-auto-flow: column; or row; we can add with this function
+
+
+aligning-items ///
+align-items: center; //example it aligns item vertically in grid area 
+alignt-items: stretch; // like this stretches to complete area 
+align-items: end; // end is to bottom of grid areas vertically
+
+justify-items: center;  // aligns items vertically or horizontally inside completly horizontaly and vertically aligns 
+
+
+
+align-self:start; // ovewrites grid area all the way to the top, end would go all the way to the bottom
+justify-self: start; // overwrites grid are horizontally to the left or right
+
+justify-content: center // // it centers, also there is start, and end it justifys whole content horizontaly where we want
+
+
+grid-auto-flow: row dense; // if we dont want any holes in grid layout
+
+
+
+using min-content max-content and the minmax() function 
+max-content instead of having 1 fr unit we use max-content, it has same width so it can acommodate content
+tries to makes not any line breaks, but if we add more text it will expand column it will become very wide
+
+min-content takes largest width without overflowing so text has to fit inside
+
+min-max() something that we pass two values in and then css ensures that the track will always stay between these two sizes
+
+example: grid-template-rows: repeat(2, minmax(150px, min-content));
+
+
+auto-fit and auto-fill responsive layouts
+
+auto-fill how much our container width is thats how many rows it would create
+
+auto-fit does same but removes rest and collapses extra space removes it to have a width of 0
+
+/// NEXTER PROJECT 
+
+1.Build overall layout
+2.Building features section
+3.Building story section
+4.Building homes section
+5.Building gallery
+6.Building footer
+7.Building sidebar
+8.Building header
+9.Building realtors
+10.Writing media queries
+
+
+
+
